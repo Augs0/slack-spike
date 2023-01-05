@@ -18,6 +18,7 @@ app.post('/slack-webhook-verify', (req, res) => {
   console.log('user slack id:', req.body.event.user.id);
 
   // required to return challenge for slack
+  console.log(req.body.challenge)
   res.status(200).json({ challenge: req.body.challenge });
 });
 
