@@ -7,18 +7,18 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.post('/slack-webhook-verify', (req, res) => {
-  console.log(req);
-  console.log('Hello we are no logging\nfull body log:');
-  console.log(req.body);
+  // console.log(req);
+  // console.log('Hello we are no logging\nfull body log:');
+  // console.log(req.body);
 
-  console.log('log user profile:');
-  console.log(req.body.event.user.profile);
+  // console.log('log user profile:');
+  // console.log(req.body.event.user.profile);
 
-  console.log('user email:', req.body.event.user.profile.email);
-  console.log('user slack id:', req.body.event.user.id);
+  // console.log('user email:', req.body.event.user.profile.email);
+  // console.log('user slack id:', req.body.event.user.id);
 
   // required to return challenge for slack
-  console.log(req.body.challenge)
+
   res.status(200).json({ challenge: req.body.challenge });
 });
 
